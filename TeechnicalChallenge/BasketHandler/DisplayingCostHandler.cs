@@ -14,12 +14,14 @@ namespace BasketHandler
 		}
 		public void DisplayCostHandler()
 		{
-			Console.WriteLine("Would you like to add a discount code? (Y or N)");
-			if (Console.ReadLine().ToUpper().StartsWith("Y"))
+			Console.Write("Would you like to add a discount code? (Y or N): ");
+			var userinput = Console.ReadLine().ToUpper();
+
+			if (userinput.StartsWith("Y"))
 			{
 				_costCalculation.CalculateAfterDiscountCode();
 			}
-			else if (Console.ReadLine().ToUpper().StartsWith("N"))
+			else if (userinput.StartsWith("N"))
 			{
 				_costCalculation.CalculateTotalCost();
 			}

@@ -26,7 +26,7 @@ namespace BasketHandler
 
 			_initialiser.InitiliseBasketHandler();
 
-			log.Information("Started Initialiser");
+			log.Information("Finished Initialiser");
 
 		}
 	}

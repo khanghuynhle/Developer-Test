@@ -22,21 +22,24 @@ namespace BasketHandler
 			var listItemIndex = new List<int>();
 
 			//Check if the number entered is in range of the items
-			while (itemNumber < 0 || itemNumber > _itemsInBasket.Items.Count())
+			while (itemNumber <= 0 || itemNumber > _itemsInBasket.Items.Count())
 			{
-				Console.WriteLine("Please enter a valid number for the item");
+				Console.Write("Please enter a valid number for the item: ");
 				AddItem(Console.Read());
 			}
 			listItemIndex.Add(itemNumber - 1);
 			_itemsInBasket.ItemIndexes = listItemIndex;
 
 			//Check if user want to add more items
-			Console.WriteLine("Would you like to add more item? (Y or N)");
-			if (Console.ReadLine().ToUpper().StartsWith("Y"))
+			Console.Write("Would you like to add more item? (Y or N): ");
+
+			//to avoid duplication ReadLine() being invoked twice, i create a local variable
+			var userinput = Console.ReadLine().ToUpper();
+			if (userinput.StartsWith("Y"))
 			{
 				AddItem(Console.Read());
 			}
-			else if (Console.ReadLine().ToUpper().StartsWith("N"))
+			else if (userinput.StartsWith("N"))
 			{
 				return _itemsInBasket.ItemIndexes;
 			}

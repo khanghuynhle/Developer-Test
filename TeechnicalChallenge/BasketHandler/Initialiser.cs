@@ -21,8 +21,10 @@ namespace BasketHandler
 		public void InitiliseBasketHandler()
 		{
 			//This is to display items for user to choose
-			Console.WriteLine("Please choose a product from the bellow list by entering the number of that item: ");
 			_displayingItems.DisplayItems();
+
+			Console.Write("Please choose a product from the above list by entering the number of that item: ");
+
 			_updateBasket.AddItem(Convert.ToInt32(Console.ReadLine()));
 
 			//Letting user add a discount code if they'd like to

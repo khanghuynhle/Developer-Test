@@ -1,0 +1,50 @@
+Suedo code:
+
+Customer choose an item
+=> add to a variable
+=> update the variable if there are more item 
+		=> item need to be a list
+=> Check the total cost of those items
+		=> add a costs to the items
+			=> costs and items need to be defined
+=> discount calculation
+		=> discount code need to be existed
+			=> Add a refined list of codes
+				=> varieties of 10% 15% ect. 
+
+---
+Initialiser method:
+
+Displayitems();
+=> promt user to choose an item (AddItem(); )
+=> ask if they want to add more or review basket and pay  
+		=> if they want to pay, ask if they have an discount code
+			=> if they have discount code, display total cost before and after discount (Add DiscountCode (); CostCalculation();  )
+			=> else display total cost (CostCalculation(); )
+		=> if they want to add more items, countinue with Displayitems();
+
+---
+AddItem method:
+
+After DisplayItems(); from Initialiser()
+=> check if the number is valid
+		=> promt user to enter again if not
+=> Add the index of the item into a list 
+=> ask if user would like to add more items
+---
+AddDiscountCode method:
+
+If code is in defined list 
+	=> apply discount
+else 
+	=> tell user code is invalid
+
+to verify:
+find the item in defined list
+
+---
+CalculateAfterDiscountCode ()
+
+find item price
+=> add total (CalculateTotalCost(); )
+=> apply discount code

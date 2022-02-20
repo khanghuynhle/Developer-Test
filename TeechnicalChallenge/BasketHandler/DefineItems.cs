@@ -14,7 +14,7 @@ namespace BasketHandler
 		}
 		public List<Item> DefineItemForUser()
 		{
-			List<Item> itemsInStock = _itemsInBasket.Items;
+			var itemsInStock = new List<Item>();
 			itemsInStock.Add(new Item() { ItemName = "Iphone 13 pro", ItemPrice = 1000});
 			itemsInStock.Add(new Item() { ItemName = "Iphone 13", ItemPrice = 900 });
 			itemsInStock.Add(new Item() { ItemName = "Iphone 13 Pro Max", ItemPrice = 1300});
@@ -26,7 +26,9 @@ namespace BasketHandler
 			itemsInStock.Add(new Item() { ItemName = "Apple Watch 5", ItemPrice = 300});
 			itemsInStock.Add(new Item() { ItemName = "Apple Watch 6", ItemPrice = 400});
 
-			return itemsInStock;
+			_itemsInBasket.Items = itemsInStock;
+
+			return _itemsInBasket.Items;
 		}
 	}
 }

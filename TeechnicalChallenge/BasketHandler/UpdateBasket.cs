@@ -18,21 +18,25 @@ namespace BasketHandler
 		}
 		public List<int> AddItem(int itemNumber)
 		{
+			//initiate new local list
+			var listItemIndex = new List<int>();
+
 			//Check if the number entered is in range of the items
 			while (itemNumber < 0 || itemNumber > _itemsInBasket.Items.Count())
 			{
 				Console.WriteLine("Please enter a valid number for the item");
 				AddItem(Convert.ToInt32(Console.ReadLine()));
 			}
-			_itemsInBasket.ItemIndexes.Add(itemNumber);
+			listItemIndex.Add(itemNumber);
+			_itemsInBasket.ItemIndexes = listItemIndex;
 
 			//Check if user want to add more items
-			Console.Write("Would you like to add more item? (Y or N)");
-			if (Console.ReadLine().StartsWith("Y"))
+			Console.WriteLine("Would you like to add more item? (Y or N)");
+			if (Console.ReadLine().ToUpper().StartsWith("Y"))
 			{
 				AddItem(Convert.ToInt32(Console.ReadLine()));
 			}
-			else if (Console.ReadLine().StartsWith("N"))
+			else if (Console.ReadLine().ToUpper().StartsWith("N"))
 			{
 				return _itemsInBasket.ItemIndexes;
 			}

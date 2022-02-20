@@ -15,17 +15,18 @@ namespace BasketHandler
 		public void DisplayCostHandler()
 		{
 			Console.WriteLine("Would you like to add a discount code? (Y or N)");
-			if (Console.ReadLine().StartsWith("Y"))
+			if (Console.ReadLine().ToUpper().StartsWith("Y"))
 			{
 				_costCalculation.CalculateAfterDiscountCode();
 			}
-			else if (Console.ReadLine().StartsWith("N"))
+			else if (Console.ReadLine().ToUpper().StartsWith("N"))
 			{
 				_costCalculation.CalculateTotalCost();
 			}
 			else
 			{
 				Console.WriteLine("Please type in (Y)es or (N)o only");
+				DisplayCostHandler();
 			}
 		}
 	}

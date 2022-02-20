@@ -17,10 +17,11 @@ namespace BasketHandler
 		}
 		public void DisplayItems()
 		{
-			int i = 0;
+			int i = 1;
 			foreach (Item item in _defineItems.DefineItemForUser())
 			{
-				Console.WriteLine("{itemOrder} {items}", i, _itemsInBasket.Items);
+				Console.WriteLine("{0}, Item Name: {1}, Price: {2}", i, item.ItemName, item.ItemPrice);
+				//Console.WriteLine(i, ", Item Name: ", item.ItemName, "Item Price: ", item.ItemPrice);
 				i++;
 			}
 		}

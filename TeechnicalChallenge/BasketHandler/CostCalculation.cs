@@ -39,7 +39,7 @@ namespace BasketHandler
 			{
 				cost = cost + _itemsInBasket.Items.Select(a => a.ItemPrice).ElementAt(itemIndex);
 			}
-
+			Console.WriteLine("Your total is: {0}", cost);
 			return cost;
 		}
 	}

@@ -25,16 +25,16 @@ namespace BasketHandler
 			while (itemNumber < 0 || itemNumber > _itemsInBasket.Items.Count())
 			{
 				Console.WriteLine("Please enter a valid number for the item");
-				AddItem(Convert.ToInt32(Console.ReadLine()));
+				AddItem(Console.Read());
 			}
-			listItemIndex.Add(itemNumber);
+			listItemIndex.Add(itemNumber - 1);
 			_itemsInBasket.ItemIndexes = listItemIndex;
 
 			//Check if user want to add more items
 			Console.WriteLine("Would you like to add more item? (Y or N)");
 			if (Console.ReadLine().ToUpper().StartsWith("Y"))
 			{
-				AddItem(Convert.ToInt32(Console.ReadLine()));
+				AddItem(Console.Read());
 			}
 			else if (Console.ReadLine().ToUpper().StartsWith("N"))
 			{
@@ -43,6 +43,7 @@ namespace BasketHandler
 			else
 			{
 				Console.WriteLine("Please type in (Y)es or (N)o only");
+				AddItem(Console.Read());
 			}
 
 			return _itemsInBasket.ItemIndexes;
